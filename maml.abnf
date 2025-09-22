@@ -1,6 +1,4 @@
-maml = document
-
-document = space value space
+maml = space value space
 
 value =  object / array / string / number / "true" / "false" / "null"
 
@@ -37,7 +35,7 @@ integer = '0' / ( onenine *DIGIT )
 char =  %x20-21 / %x23-5B / %x5D-10FFFF
 char =/ '\' ( '"' / '\' / '/' / 'b' / 'f' / 'n' / 'r' / 't' / %x75 4HEXDIG )
 
-space = *( ws [ comment ] newline )
+space = *( ws [ comment ] )
 
 comment = '#' *non-eol
 
