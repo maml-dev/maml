@@ -1,6 +1,6 @@
 maml = space value space
 
-value =  object / array / string / number / "true" / "false" / "null"
+value =  object / array / string / multiline-string / number / "true" / "false" / "null"
 
 object = '{' [ members ] space '}'
 
@@ -20,7 +20,17 @@ items =/ space value space [ separator ]
 
 separator = ',' / newline
 
-string = '"' *char '"'
+string = quote *char quote
+
+multiline-string = 3quote [ newline ] multiline-string-body 3quote
+
+multiline-string-body = *literal-char *( allowed-quotes 1*literal-char ) [ allowed-quotes ]
+
+allowed-quotes = 1*2quote
+
+quote = '"'
+
+literal-char = %x09 / %x20-21 / %x23-7E / non-ascii / newline
 
 number = [ '-' ] integer [ fraction ] [ exp ]
 
@@ -33,7 +43,7 @@ fraction = '.' 1*DIGIT
 integer = '0' / ( onenine *DIGIT )
 
 char =  %x20-21 / %x23-5B / %x5D-10FFFF
-char =/ '\' ( '"' / '\' / '/' / 'b' / 'f' / 'n' / 'r' / 't' / %x75 4HEXDIG )
+char =/ %x5C ( %x5C / '"' / '/' / 'b' / 'f' / 'n' / 'r' / 't' / 'u' 4HEXDIG )
 
 space = *( ws [ comment ] )
 
