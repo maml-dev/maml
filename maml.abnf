@@ -1,11 +1,11 @@
-maml = space value space
+maml = ws-comment-newline value ws-comment-newline
 
 value =  object / array / string / multiline-string / number / "true" / "false" / "null"
 
-object = "{" [ members ] space "}"
+object = "{" [ members ] ws-comment-newline "}"
 
-members =  space key-value ws [ comment ] separator members
-members =/ space key-value space [ separator ]
+members =  ws-comment-newline key-value ws [ comment ] separator members
+members =/ ws-comment-newline key-value ws [ comment ] [ separator ]
 
 key-value = key ws ":" ws value
 
@@ -13,10 +13,10 @@ key = string / identifier
 
 identifier = 1*( ALPHA / DIGIT / "-" / "_" )
 
-array = "[" [ items ] space "]"
+array = "[" [ items ] ws-comment-newline "]"
 
-items =  space value ws [ comment ] separator items
-items =/ space value space [ separator ]
+items =  ws-comment-newline value ws [ comment ] separator items
+items =/ ws-comment-newline value ws [ comment ] [ separator ]
 
 separator = "," / newline
 
@@ -45,22 +45,22 @@ integer = "0" / ( onenine *DIGIT )
 char =  %x20-21 / %x23-5B / %x5D-10FFFF
 char =/ %x5C ( %x5C / quote / "/" / "b" / "f" / "n" / "r" / "t" / "u" 4HEXDIG )
 
-space = *( ws [ comment ] )
-
 comment = "#" *non-eol
 
 non-eol = %x09 / %x20-7E / non-ascii
 
 non-ascii = %x80-D7FF / %xE000-10FFFF
 
+ws-comment-newline = *( (SP / HTAB) / [ comment ] newline )
+
 newline = LF / CR LF
 
-ws = *( SP / HTAB / LF / CR )
+ws = *( SP / HTAB )
 
 SP     = %x20              ; space
+HTAB   = %x09              ; horizontal tab
 CR     = %x0D              ; carriage return
 LF     = %x0A              ; linefeed
-HTAB   = %x09              ; horizontal tab
 ALPHA  = %x41-5A / %x61-7A ; A-Z / a-z
 DIGIT  = %x30-39           ; 0-9
 HEXDIG = DIGIT / "A" / "B" / "C" / "D" / "E" / "F"
