@@ -2,23 +2,23 @@ maml = space value space
 
 value =  object / array / string / multiline-string / number / "true" / "false" / "null"
 
-object = '{' [ members ] space '}'
+object = "{" [ members ] space "}"
 
 members =  space key-value ws [ comment ] separator members
 members =/ space key-value space [ separator ]
 
-key-value = key ws ':' ws value
+key-value = key ws ":" ws value
 
 key = string / identifier
 
-identifier = 1*( ALPHA / DIGIT / '-' / '_' )
+identifier = 1*( ALPHA / DIGIT / "-" / "_" )
 
-array = '[' [ items ] space ']'
+array = "[" [ items ] space "]"
 
 items =  space value ws [ comment ] separator items
 items =/ space value space [ separator ]
 
-separator = ',' / newline
+separator = "," / newline
 
 string = quote *char quote
 
@@ -28,31 +28,40 @@ multiline-string-body = *literal-char *( allowed-quotes 1*literal-char ) [ allow
 
 allowed-quotes = 1*2quote
 
-quote = '"'
+quote = %x22
 
 literal-char = %x09 / %x20-21 / %x23-7E / non-ascii / newline
 
-number = [ '-' ] integer [ fraction ] [ exp ]
+number = [ "-" ] integer [ fraction ] [ exp ]
 
 onenine = %x31-39
 
-exp = ( 'e' / 'E' ) [ '-' / '+' ] 1*DIGIT
+exp = ( "e" / "E" ) [ "-" / "+" ] 1*DIGIT
 
-fraction = '.' 1*DIGIT
+fraction = "." 1*DIGIT
 
-integer = '0' / ( onenine *DIGIT )
+integer = "0" / ( onenine *DIGIT )
 
 char =  %x20-21 / %x23-5B / %x5D-10FFFF
-char =/ %x5C ( %x5C / '"' / '/' / 'b' / 'f' / 'n' / 'r' / 't' / 'u' 4HEXDIG )
+char =/ %x5C ( %x5C / quote / "/" / "b" / "f" / "n" / "r" / "t" / "u" 4HEXDIG )
 
 space = *( ws [ comment ] )
 
-comment = '#' *non-eol
+comment = "#" *non-eol
 
 non-eol = %x09 / %x20-7E / non-ascii
 
 non-ascii = %x80-D7FF / %xE000-10FFFF
 
-newline = LF / CRLF
+newline = LF / CR LF
 
 ws = *( SP / HTAB / LF / CR )
+
+SP     = %x20              ; space
+CR     = %x0D              ; carriage return
+LF     = %x0A              ; linefeed
+HTAB   = %x09              ; horizontal tab
+ALPHA  = %x41-5A / %x61-7A ; A-Z / a-z
+DIGIT  = %x30-39           ; 0-9
+HEXDIG = DIGIT / "A" / "B" / "C" / "D" / "E" / "F"
+
