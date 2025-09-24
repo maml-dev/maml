@@ -29,6 +29,12 @@ hero:
         born: 2001
       }
     }
+    {
+      maml: {
+        name: "MAML"
+        born: 2025
+      }
+    }    
   ]
 
   notes: """

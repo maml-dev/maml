@@ -1,8 +1,12 @@
 {
   "devDependencies": {
-    "vitepress": "^2.0.0-alpha.12"
+    "abnf": "^5.0.2",
+    "peggy": "^5.0.6",
+    "vitepress": "^2.0.0-alpha.12",
+    "vitest": "^3.2.4"
   },
   "scripts": {
+    "test": "vitest",
     "dev": "vitepress dev",
     "build": "vitepress build",
     "preview": "vitepress preview",

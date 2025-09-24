@@ -1,27 +1,39 @@
+import fs from 'node:fs'
 import { defineConfig } from 'vitepress'
 
-// https://vitepress.dev/reference/site-config
+const __dirname = new URL('.', import.meta.url).pathname
+const mamlLang = JSON.parse(fs.readFileSync(__dirname + '/maml.json', 'utf8'))
+
 export default defineConfig({
-  title: "MAML",
-  description: "Minimal Abstract Markup Language",
+  base: '/',
+  cleanUrls: true,
+  title: 'MAML',
+  titleTemplate: ':title',
+  description: 'Minimal Abstract Markup Language',
   themeConfig: {
-    // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-    ],
-
-    sidebar: [
       {
-        text: 'Examples',
+        text: 'Spec',
         items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
-        ]
-      }
+          { text: 'v0.1', link: '/spec/v0.1' },
+        ],
+      },
     ],
-
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/maml-dev/maml' }
-    ]
-  }
+      { icon: 'github', link: 'https://github.com/maml-dev/maml' },
+    ],
+    search: {
+      provider: 'local',
+    },
+  },
+  markdown: {
+    theme: {
+      light: 'catppuccin-latte',
+      dark: 'plastic'
+    },
+    shikiSetup(shiki) {
+      shiki.loadLanguage(mamlLang)
+    },
+  },
 })

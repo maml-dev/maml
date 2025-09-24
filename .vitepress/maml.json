@@ -1,0 +1,204 @@
+{
+  "displayName": "MAML",
+  "name": "maml",
+  "patterns": [
+    {
+      "include": "#value"
+    }
+  ],
+  "repository": {
+    "comments": {
+      "begin": "(^[\\t ]+)?(?=#)",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.whitespace.comment.leading.maml"
+        }
+      },
+      "end": "(?!\\G)",
+      "patterns": [
+        {
+          "begin": "#",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.comment.maml"
+            }
+          },
+          "end": "\\n",
+          "name": "comment.line.number-sign.maml"
+        }
+      ]
+    },
+    "array": {
+      "begin": "\\[",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.array.begin.maml"
+        }
+      },
+      "end": "]",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.array.end.maml"
+        }
+      },
+      "name": "meta.structure.array.maml",
+      "patterns": [
+        {
+          "include": "#value"
+        },
+        {
+          "match": ",",
+          "name": "punctuation.separator.array.maml"
+        },
+        {
+          "match": "[^]\\s]",
+          "name": "invalid.illegal.expected-array-separator.maml"
+        }
+      ]
+    },
+    "object": {
+      "begin": "\\{",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.dictionary.begin.maml"
+        }
+      },
+      "end": "}",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.dictionary.end.maml"
+        }
+      },
+      "name": "meta.structure.dictionary.maml",
+      "patterns": [
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#key"
+        },
+        {
+          "begin": ":",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.separator.dictionary.key-value.maml"
+            }
+          },
+          "end": "(,)|(?=\n)|(?=})",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.separator.dictionary.pair.maml"
+            }
+          },
+          "name": "meta.structure.dictionary.value.maml",
+          "patterns": [
+            {
+              "include": "#value"
+            },
+            {
+              "match": "[^,\\s]",
+              "name": "invalid.illegal.expected-dictionary-separator.maml"
+            }
+          ]
+        },
+        {
+          "match": "[^}\\s]",
+          "name": "invalid.illegal.expected-dictionary-separator.maml"
+        }
+      ]
+    },
+    "key": {
+      "name": "string.key.maml",
+      "patterns": [
+        {
+          "include": "#string"
+        },
+        {
+          "match": "[A-Za-z0-9_-]",
+          "name": "variable.other.key.maml"
+        }
+      ]
+    },
+    "string": {
+      "begin": "\"",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.string.begin.maml"
+        }
+      },
+      "end": "\"",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.string.end.maml"
+        }
+      },
+      "name": "string.quoted.double.maml",
+      "patterns": [
+        {
+          "include": "#stringcontent"
+        }
+      ]
+    },
+    "stringcontent": {
+      "patterns": [
+        {
+          "match": "\\\\(?:[\"/\\\\bfnrt]|u\\h{4})",
+          "name": "constant.character.escape.maml"
+        },
+        {
+          "match": "\\\\.",
+          "name": "invalid.illegal.unrecognized-string-escape.maml"
+        }
+      ]
+    },
+    "multilinestring": {
+      "begin": "\"\"\"",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.string.begin.maml"
+        }
+      },
+      "end": "\"{3,5}",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.string.end.maml"
+        }
+      },
+      "name": "string.quoted.triple.string.maml"
+    },
+    "constant": {
+      "match": "\\b(?:true|false|null)\\b",
+      "name": "constant.language.maml"
+    },
+    "number": {
+      "match": "-?(?:0|[1-9]\\d*)(?:(?:\\.\\d+)?(?:[Ee][-+]?\\d+)?)?",
+      "name": "constant.numeric.maml"
+    },
+    "value": {
+      "patterns": [
+        {
+          "include": "#constant"
+        },
+        {
+          "include": "#number"
+        },
+        {
+          "include": "#multilinestring"
+        },
+        {
+          "include": "#string"
+        },
+        {
+          "include": "#array"
+        },
+        {
+          "include": "#object"
+        },
+        {
+          "include": "#comments"
+        }
+      ]
+    }
+  },
+  "scopeName": "source.maml"
+}
