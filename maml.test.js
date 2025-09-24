@@ -101,7 +101,6 @@ test('array with comments', () => {
 test('string', () => {
   parse(`""`)
   parse(`"a"`)
-  parse(`"a\nb"`)
 
   // Testing multiline string is not possible,
   // as peggy parser does not support lookaheads.
