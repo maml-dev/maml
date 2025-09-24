@@ -1,4 +1,4 @@
-# MAML Diagram
+# MAML's Syntax Diagrams
 
 <style>
   svg {
