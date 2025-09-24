@@ -3,7 +3,7 @@ layout: home
 
 hero:
   name: "MAML"
-  text: "Minimal Abstract Markup Language"
+  tagline: "Minimal. Human-readable. Machine-parsable."
 ---
 
 
