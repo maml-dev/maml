@@ -49,5 +49,5 @@ comments—defines ordered objects, and provides one clear spec so implementatio
 
 ## FAQ
 
-1. [What's MAML different from JSONC and JSON5?](https://github.com/maml-dev/maml/issues/1)
+1. [What’s the difference between MAML and JSONC/JSON5?](https://github.com/maml-dev/maml/issues/1)
 
