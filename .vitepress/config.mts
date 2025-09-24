@@ -26,6 +26,10 @@ export default defineConfig({
     search: {
       provider: 'local',
     },
+    footer: {
+      message: 'MAML is licensed under the <a href="/license">MIT License</a>.',
+      copyright: 'Copyright © 2025 <a href="https://medv.io">Medvedev Anton</a>'
+    }
   },
   markdown: {
     theme: {

@@ -51,3 +51,10 @@ comments—defines ordered objects, and provides one clear spec so implementatio
 
 1. [What’s the difference between MAML and JSONC/JSON5?](https://github.com/maml-dev/maml/issues/1)
 
+
+## Implementations
+
+MAML is a brand-new language, so feel free to create new implementations following [the specification](/spec/v0.1).
+
+1. ...
+
