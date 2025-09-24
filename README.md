@@ -6,4 +6,4 @@ See [maml.dev](https://maml.dev) for more information and specification.
 
 ## License
 
-[MIT](LICENSE)
+MIT
