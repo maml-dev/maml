@@ -8,25 +8,14 @@
   ],
   "repository": {
     "comments": {
-      "begin": "(^[\\t ]+)?(?=#)",
+      "begin": "(#)",
       "beginCaptures": {
         "1": {
-          "name": "punctuation.whitespace.comment.leading.maml"
+          "name": "punctuation.definition.comment.maml"
         }
       },
-      "end": "(?!\\G)",
-      "patterns": [
-        {
-          "begin": "#",
-          "beginCaptures": {
-            "0": {
-              "name": "punctuation.definition.comment.maml"
-            }
-          },
-          "end": "\\n",
-          "name": "comment.line.number-sign.maml"
-        }
-      ]
+      "end": "$|(?=#)",
+      "name": "punctuation.definition.comment.maml"
     },
     "array": {
       "begin": "\\[",
