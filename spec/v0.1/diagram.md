@@ -1,4 +1,4 @@
-# MAML's Syntax Diagrams
+# MAML v0.1 Syntax Diagrams
 
 <style>
   svg {
@@ -8,12 +8,12 @@
   }
 
   svg * {
-    stroke: var(--vp-c-text-1) !important;
+    stroke: var(--vp-c-text-3) !important;
   }
 
   svg text {
-    stroke: var(--vp-c-text-1) !important;
-    stroke-width: 0.5 !important;
+    fill: var(--vp-c-text-1) !important;
+    stroke-width: 0 !important;
   }
 </style>
 

@@ -5,7 +5,7 @@ import peggy from 'peggy'
 let parse
 
 beforeAll(async () => {
-  const rules = await parseFile('maml.abnf')
+  const rules = await parseFile('spec/v0.1/maml.abnf')
   const text = rules.toFormat()
   const doParse = peggy.generate(text, {startRule: 'maml'})?.parse
   if (!doParse) throw new Error('Parser generation failed')
