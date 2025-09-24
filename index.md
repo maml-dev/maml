@@ -6,7 +6,6 @@ hero:
   tagline: "Minimal. Human-readable. Machine-parsable."
 ---
 
-
 ```maml
 {
   project: "MAML"
@@ -43,4 +42,12 @@ Keeps formatting as-is.
 """
 }
 ```
+
+**MAML** is a minimal configuration language: easy for humans to write and trivial for machines to parse. It keeps
+JSON’s strictness and braces, adds only what helps—newline separators, raw triple-quoted multiline strings, and `#`
+comments—defines ordered objects, and provides one clear spec so implementations agree.
+
+## FAQ
+
+1. [What's MAML different from JSONC and JSON5?](https://github.com/maml-dev/maml/issues/1)
 
