@@ -43,9 +43,18 @@ Keeps formatting as-is.
 }
 ```
 
-**MAML** is a minimal configuration language: easy for humans to write and trivial for machines to parse. It keeps
-JSON’s strictness and braces, adds only what helps—newline separators, raw triple-quoted multiline strings, and `#`
-comments—defines ordered objects, and provides one clear spec so implementations agree.
+## Rationale
+
+JSON is the most popular _data-interchange_ format. But it isn't a very good _configuration_ language.
+
+**MAML** keeps JSON’s simplicity and adds only the needed bits for a good configuration language:
+
+1. Comments
+2. Multiline strings
+3. Optional commas
+4. Optional key quotes
+
+**MAML** is human-readable and _easy to parse_.
 
 ## FAQ
 
