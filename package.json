@@ -5,6 +5,9 @@
     "vitepress": "^2.0.0-alpha.12",
     "vitest": "^3.2.4"
   },
+  "optionalDependencies":  {
+    "@rollup/rollup-linux-x64-gnu": "^4.0.0"
+  },
   "scripts": {
     "test": "vitest",
     "dev": "vitepress dev",
