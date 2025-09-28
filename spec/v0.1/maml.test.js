@@ -1,9 +1,9 @@
-import { test, describe, beforeAll } from 'vitest'
+import { test, describe, beforeAll, expect } from 'vitest'
 import path from 'node:path'
 import { parseFile } from 'abnf'
 import peggy from 'peggy'
 
-const  allowedStartRules = ['maml']
+const  allowedStartRules = ['maml', 'multiline_string']
 
 async function generateParser() {
   const __dirname = new URL('.', import.meta.url).pathname
@@ -110,8 +110,25 @@ describe('MAML v0.1', () => {
   test('string', () => {
     parse(`""`)
     parse(`"a"`)
+    parse(`"\\n"`)
+    parse(`"\\""`)
 
-    // Testing multiline string is not possible,
-    // as peggy parser does not support lookaheads.
+    expect(() => parse(`"\\`)).toThrow()
+    expect(() => parse(`"\n"`)).toThrow()
+    expect(() => parse(`"\\uGGGG"`)).toThrow()
+  })
+
+  test('multiline string', () => {
+    parse(`"""
+Hello,
+world!
+"""`, 'multiline_string')
+    parse(`""" """`, 'multiline_string')
+    parse(`"""\n"""`, 'multiline_string')
+    parse(`""" " """`, 'multiline_string')
+    parse(`""" "" """`, 'multiline_string')
+
+    expect(() => parse(`""""""`)).toThrow()
+    expect(() => parse(`""" """""`)).toThrow()
   })
 })
