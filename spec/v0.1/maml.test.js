@@ -1,15 +1,15 @@
-import { beforeAll, test } from 'vitest'
+import { test } from 'vitest'
+import path from 'node:path'
 import { parseFile } from 'abnf'
 import peggy from 'peggy'
 
-let parse
-
-beforeAll(async () => {
-  const rules = await parseFile('spec/v0.1/maml.abnf')
+async function generateParser(startRule = 'maml') {
+  const __dirname = new URL('.', import.meta.url).pathname
+  const rules = await parseFile(path.join(__dirname, 'maml.abnf'))
   const text = rules.toFormat()
   const doParse = peggy.generate(text, {startRule: 'maml'})?.parse
   if (!doParse) throw new Error('Parser generation failed')
-  parse = (input) => {
+  return (input) => {
     try {
       doParse(input, {grammarSource: 'input'})
     } catch (e) {
@@ -22,15 +22,17 @@ beforeAll(async () => {
       }
     }
   }
-})
+}
 
-test('simple', () => {
+test('simple', async () => {
+  const parse = await generateParser()
   parse(`null`)
   parse(`true`)
   parse(`false`)
 })
 
-test('object', () => {
+test('object', async () => {
+  const parse = await generateParser()
   parse(`{"a":1,"b":2}`)
   parse(` { "a" : 1 , "b" : 2 } `)
   parse(`
@@ -47,7 +49,8 @@ test('object', () => {
   `)
 })
 
-test('object with comments', () => {
+test('object with comments', async () => {
+  const parse = await generateParser()
   parse(`
   # before
   {}
@@ -62,7 +65,8 @@ test('object with comments', () => {
   `)
 })
 
-test('array', () => {
+test('array', async () => {
+  const parse = await generateParser()
   parse(`[]`)
   parse(`[1,2,3]`)
   parse(`
@@ -81,7 +85,8 @@ test('array', () => {
   `)
 })
 
-test('array with comments', () => {
+test('array with comments', async () => {
+  const parse = await generateParser()
   parse(`
   # before
   []
@@ -98,7 +103,8 @@ test('array with comments', () => {
   `)
 })
 
-test('string', () => {
+test('string', async () => {
+  const parse = await generateParser()
   parse(`""`)
   parse(`"a"`)
 
