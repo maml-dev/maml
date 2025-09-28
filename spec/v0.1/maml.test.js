@@ -1,21 +1,23 @@
-import { test } from 'vitest'
+import { test, describe, beforeAll } from 'vitest'
 import path from 'node:path'
 import { parseFile } from 'abnf'
 import peggy from 'peggy'
 
-async function generateParser(startRule = 'maml') {
+const  allowedStartRules = ['maml']
+
+async function generateParser() {
   const __dirname = new URL('.', import.meta.url).pathname
   const rules = await parseFile(path.join(__dirname, 'maml.abnf'))
   const text = rules.toFormat()
-  const doParse = peggy.generate(text, {startRule: 'maml'})?.parse
+  const doParse = peggy.generate(text, { allowedStartRules })?.parse
   if (!doParse) throw new Error('Parser generation failed')
-  return (input) => {
+  return (input, startRule = 'maml') => {
     try {
-      doParse(input, {grammarSource: 'input'})
+      return doParse(input, { startRule, grammarSource: 'input' })
     } catch (e) {
       if (typeof e.format === 'function') {
         throw new SyntaxError(e.format([
-          {source: 'input', text: input},
+          { source: 'input', text: input },
         ]))
       } else {
         throw e
@@ -24,75 +26,77 @@ async function generateParser(startRule = 'maml') {
   }
 }
 
-test('simple', async () => {
-  const parse = await generateParser()
-  parse(`null`)
-  parse(`true`)
-  parse(`false`)
+let parse
+
+beforeAll(async () => {
+  parse = await generateParser()
 })
 
-test('object', async () => {
-  const parse = await generateParser()
-  parse(`{"a":1,"b":2}`)
-  parse(` { "a" : 1 , "b" : 2 } `)
-  parse(`
+describe('MAML v0.1', () => {
+  test('simple', () => {
+    parse(`null`)
+    parse(`true`)
+    parse(`false`)
+  })
+
+  test('object', () => {
+    parse(`{"a":1,"b":2}`)
+    parse(` { "a" : 1 , "b" : 2 } `)
+    parse(`
     {
       a: 1
       b: 2
     }
   `)
-  parse(`
+    parse(`
     {
       a: 1,
       b: 2,
     }
   `)
-})
+  })
 
-test('object with comments', async () => {
-  const parse = await generateParser()
-  parse(`
+  test('object with comments', () => {
+    parse(`
   # before
   {}
   # after
   `)
-  parse(`
+    parse(`
     { # before
       a: 1 # after
       b: 2 # after
       # again
     } # after
   `)
-})
+  })
 
-test('array', async () => {
-  const parse = await generateParser()
-  parse(`[]`)
-  parse(`[1,2,3]`)
-  parse(`
+  test('array', () => {
+    parse(`[]`)
+    parse(`[1,2,3]`)
+    parse(`
     [
       1
       2
       3
     ]
   `)
-  parse(`
+    parse(`
     [
       1,
       2,
       3,
     ]
   `)
-})
+  })
 
-test('array with comments', async () => {
-  const parse = await generateParser()
-  parse(`
+  test('array with comments', () => {
+    parse(`
   # before
   []
   # after
   `)
-  parse(`
+    parse(`
     [ # before
       1 # after
       2 # after
@@ -101,14 +105,13 @@ test('array with comments', async () => {
       # again
     ] # after
   `)
+  })
+
+  test('string', () => {
+    parse(`""`)
+    parse(`"a"`)
+
+    // Testing multiline string is not possible,
+    // as peggy parser does not support lookaheads.
+  })
 })
-
-test('string', async () => {
-  const parse = await generateParser()
-  parse(`""`)
-  parse(`"a"`)
-
-  // Testing multiline string is not possible,
-  // as peggy parser does not support lookaheads.
-})
-
