@@ -65,5 +65,15 @@ JSON is the most popular _data-interchange_ format. But it isn't a very good _co
 
 MAML is a brand-new language, so feel free to create new implementations following [the specification](/spec/v0.1).
 
-1. ...
+- JavaScript  
+  [maml.js](https://github.com/maml-dev/maml.js) <Badge type="tip" text="MAML v0.1" />
+
+* Rust  
+  [maml-rs](https://github.com/maml-dev/maml-rs) [work in progress]
+
+* C  
+  [libmaml](https://github.com/maml-dev/libmaml) [work in progress]
+
+* PHP  
+  [maml-php](https://github.com/maml-dev/maml-php) [work in progress]
 
