@@ -20,20 +20,10 @@ hero:
     author: "Anton Medvedev"
   }
 
-  # Array of objects with nested objects
+  # Array of objects
   examples: [
-    {
-      json: {
-        name: "JSON"
-        born: 2001
-      }
-    }
-    {
-      maml: {
-        name: "MAML"
-        born: 2025
-      }
-    }    
+    { name: "JSON", born: 2001 }
+    { name: "MAML", born: 2025 }    
   ]
 
   notes: """
