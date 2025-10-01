@@ -131,7 +131,7 @@
     "stringcontent": {
       "patterns": [
         {
-          "match": "\\\\(?:[\"/\\\\bfnrt]|u\\h{4})",
+          "match": "\\\\(?:[\"/\\\\nrt]|u\\{\\h{1,6}\\})",
           "name": "constant.character.escape.maml"
         },
         {

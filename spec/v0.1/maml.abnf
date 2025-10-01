@@ -39,7 +39,7 @@ integer = "0" / ( onenine *DIGIT )
 quote = %x22
 
 char =  %x20-21 / %x23-5B / %x5D-10FFFF
-char =/ %x5C ( %x5C / quote / "/" / "b" / "f" / "n" / "r" / "t" / "u" 4HEXDIG )
+char =/ %x5C ( %x5C / quote / "/" / "n" / "r" / "t" / "u" "{" 1*6HEXDIG "}" )
 
 comment = "#" *non-eol
 

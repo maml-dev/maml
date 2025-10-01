@@ -112,10 +112,13 @@ describe('MAML v0.1', () => {
     parse(`"a"`)
     parse(`"\\n"`)
     parse(`"\\""`)
+    parse(`"\\u{10FFFF}"`)
 
     expect(() => parse(`"\\`)).toThrow()
     expect(() => parse(`"\n"`)).toThrow()
-    expect(() => parse(`"\\uGGGG"`)).toThrow()
+    expect(() => parse(`"\\u0000"`)).toThrow()
+    expect(() => parse(`"\\u{G}"`)).toThrow()
+    expect(() => parse(`"\\u{1234567}"`)).toThrow()
   })
 
   test('multiline string', () => {
