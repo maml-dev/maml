@@ -49,6 +49,7 @@ JSON is the most popular _data-interchange_ format. But it isn't a very good _co
 ## FAQ
 
 1. [What’s the difference between MAML and JSONC/JSON5?](https://github.com/maml-dev/maml/issues/1)
+2. [Why not Zig-style multiline?](https://github.com/maml-dev/maml/issues/3)
 
 
 ## Implementations
