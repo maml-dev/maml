@@ -140,7 +140,7 @@
         }
       ]
     },
-    "multilinestring": {
+    "rawstring": {
       "begin": "\"\"\"",
       "beginCaptures": {
         "0": {
@@ -172,7 +172,7 @@
           "include": "#number"
         },
         {
-          "include": "#multilinestring"
+          "include": "#rawstring"
         },
         {
           "include": "#string"

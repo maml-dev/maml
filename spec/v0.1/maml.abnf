@@ -1,6 +1,6 @@
 maml = ws-comment-newline value ws-comment-newline
 
-value =  object / array / string / multiline-string / number / "true" / "false" / "null"
+value =  object / array / string / raw-string / number / "true" / "false" / "null"
 
 object = "{" [ members ] ws-comment-newline "}"
 
@@ -22,7 +22,7 @@ separator = "," / newline
 
 string = quote *char quote
 
-multiline-string = 3quote 1*literal-char *( 1*2quote 1*literal-char ) 3quote
+raw-string = 3quote 1*literal-char *( 1*2quote 1*literal-char ) 3quote
 
 literal-char = %x09 / %x20-21 / %x23-7E / non-ascii / newline
 

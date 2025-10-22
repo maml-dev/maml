@@ -3,7 +3,7 @@ import path from 'node:path'
 import { parseFile } from 'abnf'
 import peggy from 'peggy'
 
-const  allowedStartRules = ['maml', 'multiline_string']
+const  allowedStartRules = ['maml', 'raw_string']
 
 async function generateParser() {
   const __dirname = new URL('.', import.meta.url).pathname
@@ -121,15 +121,15 @@ describe('MAML v0.1', () => {
     expect(() => parse(`"\\u{1234567}"`)).toThrow()
   })
 
-  test('multiline string', () => {
+  test('raw string', () => {
     parse(`"""
 Hello,
 world!
-"""`, 'multiline_string')
-    parse(`""" """`, 'multiline_string')
-    parse(`"""\n"""`, 'multiline_string')
-    parse(`""" " """`, 'multiline_string')
-    parse(`""" "" """`, 'multiline_string')
+"""`, 'raw_string')
+    parse(`""" """`, 'raw_string')
+    parse(`"""\n"""`, 'raw_string')
+    parse(`""" " """`, 'raw_string')
+    parse(`""" "" """`, 'raw_string')
 
     expect(() => parse(`""""""`)).toThrow()
     expect(() => parse(`""" """""`)).toThrow()

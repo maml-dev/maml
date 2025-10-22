@@ -27,7 +27,7 @@ hero:
   ]
 
   notes: """
-This is a multiline strings.
+This is a multiline raw strings.
 Keeps formatting as-is.
 """
 }
@@ -40,7 +40,7 @@ JSON is the most popular _data-interchange_ format. But it isn't a very good _co
 **MAML** keeps JSON’s simplicity and adds only the needed bits for a good configuration language:
 
 1. Comments
-2. Multiline strings
+2. Multiline raw strings
 3. Optional commas
 4. Optional key quotes
 
