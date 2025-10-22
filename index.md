@@ -62,11 +62,11 @@ MAML is a brand-new language, so feel free to create new implementations followi
 * Python <br/>
   [maml-py](https://pypi.org/project/maml-py/) <Badge type="tip" text="MAML v0.1" />
 
+* C <br/>
+  [libmaml](https://github.com/lhearachel/libmaml) <Badge type="tip" text="MAML v0.1" />
+
 * Rust <br/>
   [maml-rs](https://github.com/maml-dev/maml-rs) [work in progress]
-
-* C <br/>
-  [libmaml](https://github.com/maml-dev/libmaml) [work in progress]
 
 * PHP <br/>
   [maml-php](https://github.com/maml-dev/maml-php) [work in progress]
