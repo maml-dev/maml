@@ -69,6 +69,9 @@ MAML is a brand-new language, so feel free to create new implementations followi
 * C <br/>
   [libmaml](https://github.com/lhearachel/libmaml) <Badge type="tip" text="MAML v0.1" />
 
+* Java <br/>
+  [maml-java](https://github.com/skanga/maml-java) <Badge type="tip" text="MAML v0.1" />
+
 * Rust <br/>
   [maml-rs](https://github.com/maml-dev/maml-rs) [work in progress]
 
