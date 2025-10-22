@@ -3,10 +3,10 @@
     "abnf": "^5.0.2",
     "peggy": "^5.0.6",
     "vitepress": "^2.0.0-alpha.12",
-    "vitest": "^3.2.4"
+    "vitest": "^4.0.1"
   },
   "optionalDependencies":  {
-    "@rollup/rollup-linux-x64-gnu": "^4.0.0"
+    "@rollup/rollup-linux-x64-gnu": "^4.52.5"
   },
   "scripts": {
     "test": "vitest",
