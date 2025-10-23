@@ -22,11 +22,19 @@ export default defineConfig({
   titleTemplate: ':title',
   description: 'Minimal Abstract Markup Language',
   head: [
+    ['link', {rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png'}],
+    ['link', {rel: 'icon', type: 'image/png', sizes: '96x96', href: '/favicon.png'}],
+    ['link', {rel: 'shortcut icon', href: '/favicon.ico'}],
     ['script', {}, metrika],
   ],
   themeConfig: {
+    logo: {
+      light: '/logo-light.svg',
+      dark: '/logo-dark.svg',
+    },
     nav: [
       { text: 'Home', link: '/' },
+      { text: 'Logo', link: '/logo' },
       {
         text: 'Spec',
         items: [
