@@ -22,8 +22,12 @@ hero:
 
   # Array of objects
   examples: [
-    { name: "JSON", born: 2001 }
-    { name: "MAML", born: 2025 }    
+    {
+      name: "JSON", born: 2001
+    }
+    {
+      name: "MAML", born: 2025
+    }
   ]
 
   notes: """
@@ -43,6 +47,7 @@ JSON is the most popular _data-interchange_ format. But it isn't a very good _co
 2. Multiline raw strings
 3. Optional commas
 4. Optional key quotes
+5. Ordered key-value objects
 
 **MAML** is human-readable and _easy to parse_.
 
@@ -79,6 +84,12 @@ MAML is a brand-new language, so feel free to create new implementations followi
 * PHP <br/>
   [maml-php](https://github.com/maml-dev/maml-php) [work in progress]
 
+* Grammar <br/>
+  [maml-grammar](https://github.com/maml-dev/maml-grammar) <Badge type="tip" text="MAML v0.1" /> for TextMate,
+  VitePress, Shiki, Linguist
+
 ## Projects Using MAML
 
+* [google/zx](https://github.com/google/zx)
 * [Envi](https://envi.codecompose.dev)
+* Add your project too!
