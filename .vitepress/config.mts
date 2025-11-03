@@ -3,6 +3,7 @@ import { defineConfig } from 'vitepress'
 
 const __dirname = new URL('.', import.meta.url).pathname
 const mamlLang = JSON.parse(fs.readFileSync(__dirname + '/maml.json', 'utf8'))
+const abnfLang = JSON.parse(fs.readFileSync(__dirname + '/abnf.json', 'utf8'))
 
 const metrika = `
   (function(m,e,t,r,i,k,a){
@@ -60,6 +61,7 @@ export default defineConfig({
     },
     shikiSetup(shiki) {
       shiki.loadLanguage(mamlLang)
+      shiki.loadLanguage(abnfLang)
     },
   },
 })
