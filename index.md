@@ -79,6 +79,6 @@ MAML is a brand-new language, so feel free to create new implementations followi
 * PHP <br/>
   [maml-php](https://github.com/maml-dev/maml-php) [work in progress]
 
-## Project Using MAML
+## Projects Using MAML
 
 * [Envi](https://envi.codecompose.dev)
