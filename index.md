@@ -90,6 +90,7 @@ MAML is a brand-new language, so feel free to create new implementations followi
 
 ## Projects Using MAML
 
-* [google/zx](https://github.com/google/zx)
-* [Envi](https://envi.codecompose.dev)
+* [google/zx](https://github.com/google/zx) – A tool for writing better scripts
+* [Envi](https://envi.codecompose.dev) – Environment file management
+* [Tachi Code](https://tachicode.dev) – Browser-native code editor
 * Add your project too!
