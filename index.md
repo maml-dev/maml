@@ -51,12 +51,6 @@ JSON is the most popular _data-interchange_ format. But it isn't a very good _co
 
 **MAML** is human-readable and _easy to parse_.
 
-## FAQ
-
-1. [What’s the difference between MAML and JSONC/JSON5?](https://github.com/maml-dev/maml/issues/1)
-2. [Why not Zig-style multiline?](https://github.com/maml-dev/maml/issues/3)
-3. [What about YAML?](https://github.com/maml-dev/maml/issues/6)
-
 ## Editor Support
 
 * IntelliJ IDEA <br/>
@@ -94,3 +88,9 @@ MAML is a brand-new language, so feel free to create new implementations followi
 * [Envi](https://envi.codecompose.dev) – Environment file management
 * [Tachi Code](https://tachicode.dev) – Browser-native code editor
 * Add your project too!
+
+## FAQ
+
+1. [What’s the difference between MAML and JSONC/JSON5?](https://github.com/maml-dev/maml/issues/1)
+2. [Why not Zig-style multiline?](https://github.com/maml-dev/maml/issues/3)
+3. [What about YAML?](https://github.com/maml-dev/maml/issues/6)
