@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "devDependencies": {
     "abnf": "^5.0.2",
     "peggy": "^5.0.6",

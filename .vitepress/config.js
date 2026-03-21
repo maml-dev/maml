@@ -29,10 +29,7 @@ export default defineConfig({
     ['script', {}, metrika],
   ],
   themeConfig: {
-    logo: {
-      light: '/logo-light.svg',
-      dark: '/logo-dark.svg',
-    },
+    logo: '/logo.svg',
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Logo', link: '/logo' },
