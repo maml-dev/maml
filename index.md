@@ -54,17 +54,20 @@ JSON is the most popular _data-interchange_ format. But it isn't a very good _co
 ## Editor Support
 
 * IntelliJ IDEA <br/>
-  [maml-intellij-plugin](https://plugins.jetbrains.com/plugin/28634-maml) ([source](https://github.com/DavidSeptimus/maml-intellij-plugin)) <Badge type="tip" text="MAML v0.1" />
+  [maml-intellij-plugin](https://plugins.jetbrains.com/plugin/28634-maml) ([source](https://github.com/DavidSeptimus/maml-intellij-plugin))
 
 * VS Code <br/>
-  [vscode-maml](https://marketplace.visualstudio.com/items?itemName=maml.vscode-maml) ([source](https://github.com/maml-dev/vscode-maml)) <Badge type="tip" text="MAML v0.1" />
+  [vscode-maml](https://marketplace.visualstudio.com/items?itemName=maml.vscode-maml) ([source](https://github.com/maml-dev/vscode-maml))
+
+* Vim & Neovim <br/>
+  [vim-maml](https://github.com/maml-dev/vim-maml)
 
 * CodeMirror <br/>
-  [codemirror-maml](https://github.com/maml-dev/codemirror-maml) <Badge type="tip" text="MAML v0.1" />
+  [codemirror-maml](https://github.com/maml-dev/codemirror-maml)
 
 ## Tools
 
-* [mx](https://www.npmjs.com/package/mx) <Badge type="tip" text="MAML v0.1" /> is a CLI tool for pretty printing and
+* [mx](https://www.npmjs.com/package/mx) – a CLI tool for pretty printing and
   querying MAML files
 
 ## Implementations
