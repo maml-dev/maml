@@ -59,9 +59,14 @@ JSON is the most popular _data-interchange_ format. But it isn't a very good _co
 * VS Code <br/>
   [vscode-maml](https://marketplace.visualstudio.com/items?itemName=maml.vscode-maml) ([source](https://github.com/maml-dev/vscode-maml)) <Badge type="tip" text="MAML v0.1" />
 
+## Tools
+
+* [mx](https://www.npmjs.com/package/mx) <Badge type="tip" text="MAML v0.1" /> is a CLI tool for pretty printing and
+  querying MAML files
+
 ## Implementations
 
-MAML is a brand-new language, so feel free to create new implementations following [the specification](/spec/v0.1).
+Follow [the specification](/spec/v0.1) for creating new implementations.
 
 * JavaScript <br/>
   [maml.js](https://github.com/maml-dev/maml.js) <Badge type="tip" text="MAML v0.1" /><br/>
@@ -91,7 +96,8 @@ MAML is a brand-new language, so feel free to create new implementations followi
 * [google/zx](https://github.com/google/zx) – A tool for writing better scripts
 * [Envi](https://envi.codecompose.dev) – Environment file management
 * [Tachi Code](https://tachicode.dev) – Browser-native code editor
-* Add your project too!
+
+<sub>[Add your project too](https://github.com/maml-dev/maml/discussions/new?category=general&title=New%20project:%20)</sub>
 
 ## FAQ
 
