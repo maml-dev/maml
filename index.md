@@ -59,6 +59,9 @@ JSON is the most popular _data-interchange_ format. But it isn't a very good _co
 * VS Code <br/>
   [vscode-maml](https://marketplace.visualstudio.com/items?itemName=maml.vscode-maml) ([source](https://github.com/maml-dev/vscode-maml)) <Badge type="tip" text="MAML v0.1" />
 
+* CodeMirror <br/>
+  [codemirror-maml](https://github.com/maml-dev/codemirror-maml) <Badge type="tip" text="MAML v0.1" />
+
 ## Tools
 
 * [mx](https://www.npmjs.com/package/mx) <Badge type="tip" text="MAML v0.1" /> is a CLI tool for pretty printing and
