@@ -32,6 +32,7 @@ export default defineConfig({
     logo: '/logo.svg',
     nav: [
       { text: 'Home', link: '/' },
+      { text: 'Playground', link: '/playground' },
       { text: 'Logo', link: '/logo' },
       {
         text: 'Spec',

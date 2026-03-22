@@ -6,7 +6,7 @@
     "vitepress": "^2.0.0-alpha.12",
     "vitest": "^4.0.1"
   },
-  "optionalDependencies":  {
+  "optionalDependencies": {
     "@rollup/rollup-linux-x64-gnu": "^4.52.5"
   },
   "scripts": {
@@ -15,5 +15,12 @@
     "build": "vitepress build",
     "preview": "vitepress preview",
     "deploy": "npm run build && rsync -azP --delete .vitepress/dist/ medv.io:~/maml.dev/"
+  },
+  "dependencies": {
+    "@codemirror/lang-json": "^6.0.2",
+    "@codemirror/language": "^6.12.2",
+    "@codemirror/theme-one-dark": "^6.1.3",
+    "codemirror": "^6.0.2",
+    "maml.js": "^0.0.4"
   }
 }
