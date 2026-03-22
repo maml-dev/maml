@@ -56,6 +56,9 @@ JSON is the most popular _data-interchange_ format. But it isn't a very good _co
 * IntelliJ IDEA <br/>
   [maml-intellij-plugin](https://plugins.jetbrains.com/plugin/28634-maml) ([source](https://github.com/DavidSeptimus/maml-intellij-plugin)) <Badge type="tip" text="MAML v0.1" />
 
+* VS Code <br/>
+  [vscode-maml](https://marketplace.visualstudio.com/items?itemName=maml.vscode-maml) ([source](https://github.com/maml-dev/vscode-maml)) <Badge type="tip" text="MAML v0.1" />
+
 ## Implementations
 
 MAML is a brand-new language, so feel free to create new implementations following [the specification](/spec/v0.1).
