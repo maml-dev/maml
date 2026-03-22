@@ -40,6 +40,7 @@ export default defineConfig({
           { text: 'v0.1', link: '/spec/v0.1' },
         ],
       },
+      { text: 'Examples', link: 'https://maml-dev.github.io/examples/' },
     ],
     socialLinks: [
       { icon: 'github', link: 'https://github.com/maml-dev/maml' },
