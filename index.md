@@ -91,7 +91,7 @@ Follow [the specification](/spec/v0.1) for creating new implementations.
   [maml-rs](https://github.com/maml-dev/maml-rs) [work in progress]
 
 * PHP <br/>
-  [maml-php](https://github.com/maml-dev/maml-php) [work in progress]
+  [maml-php](https://github.com/maml-dev/maml-php) <Badge type="tip" text="MAML v0.1" />
 
 * Grammar <br/>
   [maml-grammar](https://github.com/maml-dev/maml-grammar) <Badge type="tip" text="MAML v0.1" /> for TextMate,
