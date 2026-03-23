@@ -42,9 +42,9 @@ let outputView = null
 onMounted(async () => {
   const { EditorView, basicSetup } = await import('codemirror')
   const { EditorState, Compartment } = await import('@codemirror/state')
-  const { StreamLanguage } = await import('@codemirror/language')
   const { json } = await import('@codemirror/lang-json')
   const { oneDark } = await import('@codemirror/theme-one-dark')
+  const { maml: mamlLanguage } = await import('codemirror-maml')
   const maml = await import('maml.js')
 
   const themeCompartment = new Compartment()
@@ -53,59 +53,6 @@ onMounted(async () => {
   function getTheme() {
     return isDark.value ? oneDark : EditorView.theme({})
   }
-
-  const mamlLanguage = StreamLanguage.define({
-    startState() {
-      return { inRawString: false }
-    },
-    token(stream, state) {
-      if (state.inRawString) {
-        if (stream.match('"""')) {
-          state.inRawString = false
-          return 'string'
-        }
-        stream.skipToEnd()
-        return 'string'
-      }
-
-      if (stream.eatSpace()) return null
-
-      if (stream.eat('#')) {
-        stream.skipToEnd()
-        return 'lineComment'
-      }
-
-      if (stream.match('"""')) {
-        state.inRawString = true
-        return 'string'
-      }
-
-      if (stream.eat('"')) {
-        while (!stream.eol()) {
-          const ch = stream.next()
-          if (ch === '"') return 'string'
-          if (ch === '\\') stream.next()
-        }
-        return 'string'
-      }
-
-      if (stream.match(/-?(?:0|[1-9]\d*)(?:\.\d+)?(?:[eE][+-]?\d+)?(?=[\s,\]\}]|$)/)) {
-        return 'number'
-      }
-
-      if (stream.match(/\b(?:true|false|null)\b/)) {
-        return 'atom'
-      }
-
-      if (stream.match(/[A-Za-z_][A-Za-z0-9_-]*/)) {
-        return 'variableName'
-      }
-
-      const ch = stream.next()
-      if ('{}[],:'.includes(ch)) return 'punctuation'
-      return null
-    },
-  })
 
   function parse(doc) {
     try {
@@ -130,7 +77,7 @@ onMounted(async () => {
       doc: defaultMAML,
       extensions: [
         basicSetup,
-        mamlLanguage,
+        mamlLanguage(),
         themeCompartment.of(getTheme()),
         EditorView.updateListener.of((update) => {
           if (update.docChanged) {

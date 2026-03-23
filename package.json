@@ -18,9 +18,9 @@
   },
   "dependencies": {
     "@codemirror/lang-json": "^6.0.2",
-    "@codemirror/language": "^6.12.2",
     "@codemirror/theme-one-dark": "^6.1.3",
     "codemirror": "^6.0.2",
+    "codemirror-maml": "^0.0.1",
     "maml.js": "^0.0.4"
   }
 }
