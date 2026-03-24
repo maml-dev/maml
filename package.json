@@ -1,13 +1,13 @@
 {
   "type": "module",
   "devDependencies": {
-    "abnf": "^5.0.2",
-    "peggy": "^5.0.6",
+    "abnf": "^5.0.4",
+    "peggy": "^5.1.0",
     "vitepress": "^2.0.0-alpha.12",
-    "vitest": "^4.0.1"
+    "vitest": "^4.1.1"
   },
   "optionalDependencies": {
-    "@rollup/rollup-linux-x64-gnu": "^4.52.5"
+    "@rollup/rollup-linux-x64-gnu": "^4.60.0"
   },
   "scripts": {
     "test": "vitest",
