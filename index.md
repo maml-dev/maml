@@ -88,7 +88,7 @@ Follow [the specification](/spec/v0.1) for creating new implementations.
   [maml-java](https://github.com/skanga/maml-java) <Badge type="tip" text="MAML v0.1" />
 
 * Rust <br/>
-  [maml-rs](https://github.com/maml-dev/maml-rs) [work in progress]
+  [maml-rs](https://github.com/maml-dev/maml-rs) <Badge type="tip" text="MAML v0.1" />
 
 * PHP <br/>
   [maml-php](https://github.com/maml-dev/maml-php) <Badge type="tip" text="MAML v0.1" />
