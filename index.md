@@ -103,10 +103,10 @@ Follow [the specification](/spec/v0.1) for creating new implementations.
 * [Envi](https://envi.codecompose.dev) – Environment file management
 * [Tachi Code](https://tachicode.dev) – Browser-native code editor
 
-<sub>[Add your project too](https://github.com/maml-dev/maml/discussions/new?category=general&title=New%20project:%20)</sub>
+<sub>[Add your project too](https://github.com/maml-dev/maml.dev/discussions/new?category=general&title=New%20project:%20)</sub>
 
 ## FAQ
 
-1. [What’s the difference between MAML and JSONC/JSON5?](https://github.com/maml-dev/maml/issues/1)
-2. [Why not Zig-style multiline?](https://github.com/maml-dev/maml/issues/3)
-3. [What about YAML?](https://github.com/maml-dev/maml/issues/6)
+1. [What’s the difference between MAML and JSONC/JSON5?](https://github.com/maml-dev/maml.dev/issues/1)
+2. [Why not Zig-style multiline?](https://github.com/maml-dev/maml.dev/issues/3)
+3. [What about YAML?](https://github.com/maml-dev/maml.dev/issues/6)

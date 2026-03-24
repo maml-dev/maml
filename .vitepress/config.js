@@ -43,7 +43,7 @@ export default defineConfig({
       { text: 'Examples', link: 'https://maml-dev.github.io/examples/' },
     ],
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/maml-dev/maml' },
+      { icon: 'github', link: 'https://github.com/maml-dev/maml.dev' },
     ],
     search: {
       provider: 'local',
