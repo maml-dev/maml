@@ -90,6 +90,9 @@ Follow [the specification](/spec/v0.1) for creating new implementations.
 * Rust <br/>
   [maml-rs](https://github.com/maml-dev/maml-rs) <Badge type="tip" text="MAML v0.1" />
 
+* Go <br/>
+  [go-maml](https://github.com/maml-dev/go-maml) <Badge type="tip" text="MAML v0.1" />
+
 * PHP <br/>
   [maml-php](https://github.com/maml-dev/maml-php) <Badge type="tip" text="MAML v0.1" />
 
