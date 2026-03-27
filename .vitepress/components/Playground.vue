@@ -45,7 +45,7 @@ onMounted(async () => {
   const { json } = await import('@codemirror/lang-json')
   const { oneDark } = await import('@codemirror/theme-one-dark')
   const { maml: mamlLanguage } = await import('codemirror-maml')
-  const maml = await import('maml.js')
+  const maml = await import('maml')
 
   const themeCompartment = new Compartment()
   const outputThemeCompartment = new Compartment()
