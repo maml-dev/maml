@@ -7,7 +7,7 @@ object = "{" [ members ] ws-comment-newline "}"
 members =  ws-comment-newline key-value ws [ comment ] separator members
 members =/ ws-comment-newline key-value ws [ comment ] [ separator ]
 
-key-value = key ws ":" ws value
+key-value = key ws-comment-newline ":" ws-comment-newline value
 
 key = string / identifier
 

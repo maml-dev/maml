@@ -71,6 +71,15 @@ describe('MAML v0.1', () => {
   `)
   })
 
+  test('object keys with space and newlines', () => {
+    parse(`
+    {
+      key
+      :
+      "value"
+    }`)
+  })
+
   test('array', () => {
     parse(`[]`)
     parse(`[1,2,3]`)
