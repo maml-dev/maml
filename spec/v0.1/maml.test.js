@@ -123,7 +123,8 @@ describe('MAML v0.1', () => {
     parse(`"\\""`)
     parse(`"\\u{10FFFF}"`)
 
-    expect(() => parse(`"\\`)).toThrow()
+    expect(() => parse(`"\\"`)).toThrow()
+    expect(() => parse(`"\\/"`)).toThrow()
     expect(() => parse(`"\n"`)).toThrow()
     expect(() => parse(`"\\u0000"`)).toThrow()
     expect(() => parse(`"\\u{G}"`)).toThrow()
