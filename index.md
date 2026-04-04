@@ -67,8 +67,9 @@ JSON is the most popular _data-interchange_ format. But it isn't a very good _co
 
 ## Tools
 
-* [mx](https://www.npmjs.com/package/mx) – a CLI tool for pretty printing and
+* [mx](https://npmjs.com/package/mx) – a CLI tool for pretty printing and
   querying MAML files
+* [to-maml](https://npmjs.com/package/to-maml) – a CLI tool for converting to MAML
 
 ## Implementations
 
