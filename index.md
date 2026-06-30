@@ -69,7 +69,8 @@ Follow [the specification](/spec/v0.1) for creating new implementations.
 
 * Grammar <br/>
   [maml-grammar](https://github.com/maml-dev/maml-grammar) <Badge type="tip" text="MAML v0.1" /> for TextMate,
-  VitePress, Shiki, Linguist
+  VitePress, Shiki, Linguist <br/>
+  [ANTLR v4](https://github.com/antlr/grammars-v4/tree/master/maml) <Badge type="tip" text="MAML v0.1" />
 
 ## Projects Using MAML
 
